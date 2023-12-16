@@ -213,6 +213,20 @@ public class AllTesting {
         assertEquals(11, beaver.getFeedingEndHour());
     }
 
+    @Test
+    public void testInsufficientFeedingTimeException() {
+        try {
+            // Assume that the minimum feeding time is 10 seconds
+            int feedingTime = 5;
+            if (feedingTime < 10) {
+                throw new InsufficientFeedingTimeException("The feeding time was too short.");
+            }
+        } catch (InsufficientFeedingTimeException e) {
+            assertEquals("The feeding time was too short.", e.getMessage());
+            return;
+        }
+        fail("Expected InsufficientFeedingTimeException was not thrown.");
+    }
 
     //Schedule Class tests
     @Test

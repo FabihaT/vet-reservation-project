@@ -45,7 +45,6 @@ public void createConnection() {
     try {
         //create a connection to the database
         dbConnect = DriverManager.getConnection("jdbc:mysql://localhost/ewr", "user", "password");
-        System.out.println("connected");
     } catch (SQLException e) {
         e.printStackTrace();
     }
